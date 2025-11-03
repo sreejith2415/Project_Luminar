@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name — Developer Portfolio (Dark)</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0b1116;--card:#0f1720;--accent:#2b89ff;--muted:#98a0aa;--glass:rgba(255,255,255,0.03);--radius:18px}
+    *{box-sizing:border-box}
+    body{background:linear-gradient(180deg,#0b1116,#0b1216);color:#e6eef8;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;margin:0}
+    a{color:var(--accent)}
+
+    /* page container */
+    .wrap{max-width:1200px;margin:36px auto;padding:28px}
+
+    /* hero */
+    .hero{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:24px;padding:36px;display:flex;gap:28px;align-items:center}
+    .hero-left{flex:1}
+    .small-kicker{font-weight:600;color:var(--muted);letter-spacing:1px;margin-bottom:8px}
+    .hero-title{font-size:38px;line-height:1.02;margin:0 0 10px;font-weight:700}
+    .hero-sub{color:var(--muted);margin-bottom:18px}
+    .hero-ctas .btn{border-radius:12px}
+
+    /* hero right - big circular image */
+    .hero-right{width:300px;flex:0 0 300px;display:flex;justify-content:center;align-items:center;position:relative}
+    .hero-circle{width:220px;height:220px;border-radius:50%;background:linear-gradient(180deg,#111827,#0b1622);display:flex;align-items:center;justify-content:center;box-shadow:0 28px 60px rgba(3,8,15,0.6);border:6px solid rgba(255,255,255,0.03)}
+    .hero-circle img{width:196px;height:196px;border-radius:50%;object-fit:cover}
+
+    /* stats */
+    .stats{display:flex;gap:18px;margin-top:18px}
+    .stat{background:var(--glass);padding:12px 16px;border-radius:12px;text-align:center}
+    .stat h4{margin:0;font-weight:700}
+    .stat p{margin:0;color:var(--muted);font-size:13px}
+
+    /* content sections */
+    section{margin-top:28px}
+    .card-dark{background:var(--card);border-radius:16px;padding:18px;box-shadow:0 20px 40px rgba(2,6,12,0.6);border:1px solid rgba(255,255,255,0.03)}
+
+    .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .proj{border-radius:12px;overflow:hidden;background:linear-gradient(180deg,#0d1620,#081015);border:1px solid rgba(255,255,255,0.03);padding:12px;display:flex;flex-direction:column}
+    .proj img{width:100%;height:140px;object-fit:cover;border-radius:8px}
+    .proj h6{margin:8px 0 4px}
+    .proj p{margin:0;color:var(--muted);font-size:13px}
+
+    /* icons row for project actions */
+    .proj-icons{display:flex;gap:10px;margin-top:10px;align-items:center}
+    .proj-icons a{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:8px;background:rgba(255,255,255,0.02);color:var(--muted);text-decoration:none;font-size:13px}
+    .proj-icons a:hover{background:rgba(255,255,255,0.04);color:#fff}
+    .proj-icons .bi{font-size:16px;color:var(--accent)}
+
+    /* contact */
+    .contact .form-control{background:transparent;border:1px solid rgba(255,255,255,0.06);color:inherit}
+
+    footer{margin-top:32px;color:var(--muted);text-align:center}
+
+    @media(max-width:980px){.projects-grid{grid-template-columns:repeat(2,1fr)}.hero{flex-direction:column;align-items:stretch}.hero-right{order:-1;margin-bottom:12px}}
+    @media(max-width:640px){.projects-grid{grid-template-columns:1fr}.hero-right{width:220px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- HERO -->
+    <header class="hero">
+      <div class="hero-left">
+        <div class="small-kicker">Developer • MERN • Sales</div>
+        <h1 class="hero-title">Hi — I'm <strong>Sreejith S</strong></h1>
+        <p class="hero-sub">MERN Stack Developer & Assistant Sales Executive with 1 year of practical sales experience at Vodafone Idea (VI). I build clean full-stack demos and small dashboards to improve sales workflows.</p>
+
+        <div class="stats">
+          <div class="stat">
+            <h4>1 yr</h4>
+            <p>Sales Experience</p>
+          </div>
+          <div class="stat">
+            <h4>MERN</h4>
+            <p>Technology Focus</p>
+          </div>
+          <div class="stat">
+            <h4>Projects</h4>
+            <p>Small & Demos</p>
+          </div>
+        </div>
+
+        <div class="hero-ctas mt-3">
+          <a class="btn btn-primary btn-sm me-2" href="#projects">View Projects</a>
+          <a class="btn btn-outline-light btn-sm" href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-circle">
+          <!-- PROFILE IMAGE SPACE (replace src with your image) -->
+          <img src="https://i.postimg.cc/449NK5Q8/Whats-App-Image-2025-10-30-at-17-24-46-52746328.jpg" alt="Your Name">
+        </div>
+      </div>
+    </header>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="card-dark">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h3 class="mb-0">Selected Projects</h3>
+          <div class="text-muted small">MERN • React • Node.js</div>
+        </div>
+
+        <div class="projects-grid">
+          <div class="proj">
+            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=80" alt="proj1">
+            <h6>Sales Dashboard</h6>
+            <p>React dashboard prototype that visualizes leads and KPIs.</p>
+            <div class="proj-icons">
+              <a href="#" title="Live demo"><i class="bi bi-box-arrow-up-right"></i> Live</a>
+              <a href="#" title="Source code"><i class="bi bi-github"></i> Repo</a>
+              <a href="#" title="Case study"><i class="bi bi-file-earmark-text"></i> Case study</a>
+            </div>
+          </div>
+          <div class="proj">
+            <img src="https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&w=800&q=80" alt="proj2">
+            <h6>Portfolio Site</h6>
+            <p>Responsive portfolio built with Bootstrap and React.</p>
+            <div class="proj-icons">
+              <a href="#" title="Live demo"><i class="bi bi-box-arrow-up-right"></i> Live</a>
+              <a href="#" title="Source code"><i class="bi bi-github"></i> Repo</a>
+              <a href="#" title="Case study"><i class="bi bi-file-earmark-text"></i> Case study</a>
+            </div>
+          </div>
+          <div class="proj">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="proj3">
+            <h6>Lead Tracker</h6>
+            <p>Mini MERN app to record and follow-up leads.</p>
+            <div class="proj-icons">
+              <a href="#" title="Live demo"><i class="bi bi-box-arrow-up-right"></i> Live</a>
+              <a href="#" title="Source code"><i class="bi bi-github"></i> Repo</a>
+              <a href="#" title="Case study"><i class="bi bi-file-earmark-text"></i> Case study</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" style="margin-top:28px">
+      <div class="card-dark contact">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h3 class="mb-0">Contact</h3>
+          <div class="muted small">Based in India — Open to opportunities</div>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <input class="form-control" placeholder="Your name">
+          </div>
+          <div class="col-md-6">
+            <input class="form-control" placeholder="you@example.com" type="email">
+          </div>
+          <div class="col-12">
+            <textarea class="form-control" rows="4" placeholder="Message"></textarea>
+          </div>
+          <div class="col-12 text-end">
+            <button class="btn btn-primary btn-sm">Send message</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Sreejith S — MERN & Sales</div>
+    </footer>
+  </div>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

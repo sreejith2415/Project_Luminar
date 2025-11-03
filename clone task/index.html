@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Clone (Bootstrap & Inline CSS Only)</title>
+    
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    
+    <style>
+        body {
+            background-color: #000;
+            font-family: 'Inter', sans-serif;
+            overflow: hidden; /* Prevent body scroll, let the main area scroll */
+        }
+        .main-content-area {
+            /* Calculated height to fit precisely above the fixed footer */
+            height: calc(100vh - 90px); 
+            overflow-y: auto; /* Enable scrolling for the main content */
+            background-color: #121212; /* Main content background */
+        }
+        /* Custom scrollbar styling (pure CSS, not inline, for aesthetics) */
+        .main-content-area::-webkit-scrollbar {
+            width: 8px;
+        }
+        .main-content-area::-webkit-scrollbar-thumb {
+            background-color: #383838;
+            border-radius: 4px;
+        }
+        .spotify-green-text { color: #1DB954; }
+        .bg-spotify-green-color { background-color: #1DB954; }
+    </style>
+</head>
+
+<body class="text-white">
+    <div class="d-flex" style="height: 100vh;">
+        
+        
+        <aside class="d-none d-md-block flex-shrink-0 p-2" style="width: 20%; min-width: 250px;">
+            <!-- Top Nav Block (Home, Search) -->
+            <nav class="p-3 rounded-3 mb-2" style="background-color: #121212;">
+                <ul class="list-unstyled">
+                    <li class="mb-3">
+                        <a href="#" class="d-flex align-items-center text-white text-decoration-none p-3 rounded-2" style="font-weight: 700;">
+                            <i class="fa-solid fa-house me-4 fs-5 spotify-green-text"></i>
+                            <span class="fs-6">Home</span>
+                        </a>
+                    </li>
+                    <li class="mb-3">
+                        <a href="#" class="d-flex align-items-center text-secondary text-decoration-none p-3 rounded-2" style="font-weight: 700;">
+                            <i class="fa-solid fa-magnifying-glass me-4 fs-5"></i>
+                            <span class="fs-6">Search</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Library and Playlists Block -->
+            <div class="p-3 rounded-3" style="background-color: #121212; height: calc(100% - 130px); overflow-y: auto;">
+                <div class="d-flex justify-content-between align-items-center mb-3 text-secondary" style="cursor: pointer;">
+                    <div class="d-flex align-items-center">
+                        <i class="fa-solid fa-book me-4 fs-5"></i>
+                        <span class="fw-bold fs-6">Your Library</span>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-plus me-2 fs-6"></i>
+                        <i class="fa-solid fa-arrow-right fs-6" style="transform: rotate(45deg);"></i>
+                    </div>
+                </div>
+
+                <!-- Static Playlist Items (Updated Placeholders) -->
+                <ul class="list-unstyled">
+                    <li class="my-3">
+                        <div class="d-flex align-items-center p-2 rounded-2" style="cursor: pointer;">
+                            <img src="https://placehold.co/50x50/1ed760/000000?text=Indie" class="rounded-2 me-3" alt="Folk Playlist" style="width: 50px; height: 50px;">
+                            <div>
+                                <h6 class="mb-0 text-white" style="font-weight: 500; font-size: 0.9rem;">Indie Focus</h6>
+                                <p class="text-secondary mb-0" style="font-size: 0.75rem;">Playlist &bull; John Doe</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="my-3">
+                        <div class="d-flex align-items-center p-2 rounded-2" style="cursor: pointer;">
+                            <img src="https://placehold.co/50x50/ff4632/ffffff?text=Rock" class="rounded-2 me-3" alt="Lofi Mix" style="width: 50px; height: 50px;">
+                            <div>
+                                <h6 class="mb-0 text-white" style="font-weight: 500; font-size: 0.9rem;">Hard Rock Hits</h6>
+                                <p class="text-secondary mb-0" style="font-size: 0.75rem;">Artist &bull; Rock King</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        
+        
+        <main class="flex-grow-1 main-content-area p-4 rounded-3 m-2">
+            
+            <!-- Top Header/Navigation (Sticky) -->
+            <header class="d-flex justify-content-between align-items-center mb-4 sticky-top p-3 rounded-3" style="background-color: #121212; top: 8px; z-index: 10;">
+                <!-- Navigation Arrows -->
+                <div>
+                    <button class="btn btn-dark rounded-circle" style="background-color: #000; border: none; opacity: 0.7;"><i class="fas fa-chevron-left text-white"></i></button>
+                    <button class="btn btn-dark rounded-circle ms-2" style="background-color: #000; border: none; opacity: 0.7;"><i class="fas fa-chevron-right text-white"></i></button>
+                </div>
+                <!-- User Profile -->
+                <div>
+                    <button class="btn btn-sm text-white rounded-pill fw-bold me-3" style="background-color: #0A0A0A; border: none;">Explore Premium</button>
+                    <button class="btn btn-sm text-white rounded-pill fw-bold p-2" style="background-color: #0A0A0A; border: none;">
+                        <i class="fa-solid fa-user-circle me-2 fs-5"></i> User Name
+                    </button>
+                </div>
+            </header>
+
+            <h2 class="mb-4 fw-bold" style="font-size: 2rem;">Good evening</h2>
+
+            <!-- Quick Access Cards (Updated Placeholders) -->
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 mb-5">
+                <!-- Card 1 -->
+                <div class="col">
+                    <div class="d-flex align-items-center rounded-3 overflow-hidden" style="background-color: #181818; cursor: pointer;">
+                        <img src="https://placehold.co/96x96/80ff00/000000?text=Focus" class="rounded-start" alt="Focus Mix" style="width: 96px; height: 96px;">
+                        <h5 class="card-title text-white fw-bold p-3 mb-0" style="font-size: 1.1rem;">Focus Mix</h5>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col">
+                    <div class="d-flex align-items-center rounded-3 overflow-hidden" style="background-color: #181818; cursor: pointer;">
+                        <img src="https://placehold.co/96x96/ff00c8/ffffff?text=Party" class="rounded-start" alt="Release Radar" style="width: 96px; height: 96px;">
+                        <h5 class="card-title text-white fw-bold p-3 mb-0" style="font-size: 1.1rem;">Party Anthems</h5>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col">
+                    <div class="d-flex align-items-center rounded-3 overflow-hidden" style="background-color: #181818; cursor: pointer;">
+                        <img src="https://placehold.co/96x96/007f7a/ffffff?text=Chill" class="rounded-start" alt="Today's Top Hits" style="width: 96px; height: 96px;">
+                        <h5 class="card-title text-white fw-bold p-3 mb-0" style="font-size: 1.1rem;">The Chill Zone</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- "Made For You" Section (Updated Placeholders) -->
+            <h3 class="mb-3 fw-bold" style="font-size: 1.5rem;">Made for User</h3>
+            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6 g-4">
+                <!-- Album Card Template 1 -->
+                <div class="col">
+                    <div class="p-3 rounded-3" style="background-color: #181818; cursor: pointer;">
+                        <img src="https://placehold.co/150x150/ffb800/000000?text=Road" class="w-100 rounded-3 mb-3 shadow" alt="Daily Mix 1">
+                        <h6 class="fw-bold text-white mt-2 mb-1 text-truncate">Road Trip Mix</h6>
+                        <p class="text-secondary mb-0 text-truncate" style="font-size: 0.8rem; height: 2.4em; line-height: 1.2;">Your favorite driving songs, perfect for the highway.</p>
+                    </div>
+                </div>
+                <!-- Album Card Template 2 -->
+                 <div class="col">
+                    <div class="p-3 rounded-3" style="background-color: #181818; cursor: pointer;">
+                        <img src="https://placehold.co/150x150/b026ff/ffffff?text=Electro" class="w-100 rounded-3 mb-3 shadow" alt="Daily Mix 2">
+                        <h6 class="fw-bold text-white mt-2 mb-1 text-truncate">Electronic Discovery</h6>
+                        <p class="text-secondary mb-0 text-truncate" style="font-size: 0.8rem; height: 2.4em; line-height: 1.2;">Your weekly mixtape of fresh music. Enjoy new music and deep cuts picked for you.</p>
+                    </div>
+                </div>
+                <!-- Album Card Template 3 -->
+                 <div class="col">
+                    <div class="p-3 rounded-3" style="background-color: #181818; cursor: pointer;">
+                        <img src="https://placehold.co/150x150/007bff/ffffff?text=Acoustic" class="w-100 rounded-3 mb-3 shadow" alt="Daily Mix 3">
+                        <h6 class="fw-bold text-white mt-2 mb-1 text-truncate">Acoustic Wonders</h6>
+                        <p class="text-secondary mb-0 text-truncate" style="font-size: 0.8rem; height: 2.4em; line-height: 1.2;">High-intensity beats for maximum motivation.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Spacing for the fixed footer -->
+            <div style="height: 100px;"></div>
+
+        </main>
+    </div>
+
+   
+
+    <footer class="fixed-bottom w-100 p-3" style="height: 90px; background-color: #0A0A0A; border-top: 1px solid #282828; z-index: 1030;">
+        <div class="container-fluid h-100 d-flex justify-content-between align-items-center">
+            
+            <!-- 1. Song Info (Updated Placeholder) -->
+            <div class="d-flex align-items-center" style="width: 25%;">
+                <img src="https://placehold.co/60x60/80ffb0/000000?text=Track" class="rounded-2 me-3 d-none d-sm-block shadow" alt="Current Song" style="width: 60px; height: 60px;">
+                <div class="d-flex flex-column">
+                    <span class="text-white fw-bold text-truncate" style="font-size: 0.9rem; cursor: pointer;">Static Track Title</span>
+                    <span class="text-secondary text-truncate" style="font-size: 0.75rem; cursor: pointer;">Amazing Artist</span>
+                </div>
+                <i class="fa-regular fa-heart ms-3 text-secondary fs-5" style="cursor: pointer;"></i>
+            </div>
+
+            <!-- 2. Player Controls and Progress Bar -->
+            <div class="d-flex flex-column align-items-center justify-content-center" style="width: 50%;">
+                <!-- Controls -->
+                <div class="d-flex gap-4 mb-2 fs-5 text-secondary">
+                    <i class="fa-solid fa-shuffle" style="cursor: pointer;"></i>
+                    <i class="fa-solid fa-backward-step" style="cursor: pointer;"></i>
+                    <!-- Play/Pause Button -->
+                    <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background-color: #fff; cursor: pointer;">
+                        <i class="fa-solid fa-play text-black fs-5" style="transform: translateX(2px);"></i>
+                    </div>
+                    <i class="fa-solid fa-forward-step" style="cursor: pointer;"></i>
+                    <i class="fa-solid fa-repeat" style="cursor: pointer;"></i>
+                </div>
+                <!-- Progress Bar (Inline CSS) -->
+                <div class="d-flex align-items-center w-100" style="max-width: 400px;">
+                    <span class="text-secondary me-2" style="font-size: 0.7rem;">0:30</span>
+                    <div class="flex-grow-1 rounded-pill position-relative" style="background-color: #535353; height: 4px;">
+                        <div class="rounded-pill bg-spotify-green-color" style="width: 20%; height: 4px;"></div>
+                        <!-- Static scrubber dot -->
+                        <span class="position-absolute rounded-circle bg-white" style="width: 12px; height: 12px; top: -4px; left: 20%;"></span>
+                    </div>
+                    <span class="text-secondary ms-2" style="font-size: 0.7rem;">3:45</span>
+                </div>
+            </div>
+
+            <!-- 3. Volume and Other Controls -->
+            <div class="d-flex align-items-center justify-content-end" style="width: 25%;">
+                <i class="fa-solid fa-microphone-lines me-3 text-secondary fs-6" style="cursor: pointer;"></i>
+                <i class="fa-solid fa-list me-3 text-secondary fs-6" style="cursor: pointer;"></i>
+                <i class="fa-solid fa-volume-high me-2 text-secondary fs-6" style="cursor: pointer;"></i>
+                <!-- Volume Slider (Inline CSS) -->
+                <div class="rounded-pill" style="width: 80px; background-color: #535353; height: 4px;">
+                    <div class="rounded-pill bg-spotify-green-color" style="width: 70%; height: 4px;"></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+   
+</body>
